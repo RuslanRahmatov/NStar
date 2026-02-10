@@ -5,23 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>N.STAR - Спортивная одежда оптом</title>
     <!-- FontAwesome Ikonkalar -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #000000;
-            --secondary: #1a1a1a;
-            --accent: #25D366; /* WhatsApp Green */
-            --bg-light: #F7F7F7;
-            --white: #ffffff;
-            --text-gray: #666666;
-            --radius: 16px;
+            --primary: #0A0A0B;          /* Deep dark */
+            --secondary: #121214;        /* Card dark */
+            --accent: #6C5CE7;           /* Modern neon purple */
+            --accent-2: #00F5D4;         /* Neon cyan (hover / effects) */
+
+            --bg-light: #F4F6FA;         /* Modern light bg */
+            --white: #FFFFFF;
+
+            --text-main: #111111;
+            --text-gray: #8B8B95;        /* Modern gray */
+
+            --radius: 18px;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Montserrat', sans-serif;
         }
 
         body {
@@ -39,9 +45,8 @@
 
         /* Typography */
         h1, h2, h3 {
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: -0.5px;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1px;
         }
 
         /* Buttons */
@@ -68,12 +73,12 @@
         }
 
         .btn-whatsapp {
-            background-color: var(--accent);
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
             color: var(--white);
         }
         .btn-whatsapp:hover {
             background-color: #1ebc57;
-            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 10px 30px rgba(108, 92, 231, 0.4);
         }
 
         /* --- HERO SECTION --- */
@@ -150,7 +155,8 @@
             gap: 30px;
         }
         .card {
-            background: var(--white);
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            color: var(--white);
             padding: 40px;
             border-radius: var(--radius);
             transition: transform 0.3s;
@@ -175,7 +181,7 @@
             font-size: 1.2rem;
         }
         .card p {
-            color: var(--text-gray);
+            color: var(--white);
         }
 
         /* --- GALLERY SECTION --- */
@@ -260,20 +266,12 @@
         <div class="container">
             <div class="hero-wrapper">
                 <div class="hero-content">
-                    <h1>Спортивная одежда <span style="color: var(--accent)">ОПТОМ</span> от производителя</h1>
-                    <p>Зарабатывайте от 100% на перепродаже. Премиальное качество (Турция), прямые поставки из Ташкента по всему СНГ.</p>
-                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                        <a href="https://wa.me/998998804477" class="btn btn-whatsapp">
-                            <i class="fab fa-whatsapp"></i> Написать в WhatsApp
-                        </a>
-                        <a href="#catalog" class="btn" style="background: #f0f0f0; color: #000;">
-                            <i class="fas fa-arrow-down"></i> Каталог
-                        </a>
-                    </div>
+                    <h1>Вы дистибютор и оптомвик в сфере одежды у нас есть уникальное предложение в Узбекистане</h1>
+                    <p>У нас больше 1000 асортиментов одежды в стиле спорт и полу классика и готовы производить в любом обьёме и можем доставить по всему миру</p>
                 </div>
                 <div class="hero-image">
                     <!-- ASOSIY RASM: Shu yerni o'zgartiring -->
-                    <img src="rasmlar/sport_kiyim1.jpg" alt="Sportswear Wholesale">
+                    <img src="rasmlar/asosiy_rasm.jpg" alt="Sportswear Wholesale">
                 </div>
             </div>
         </div>
@@ -348,7 +346,7 @@
                 </div>
                 <!-- RASM 2 -->
                 <div class="gallery-item">
-                    <img src="rasmlar/duoyka_qora.jpg" alt="Product 2">
+                    <img src="rasmlar/sport_kiyim1.jpg" alt="Product 2">
                 </div>
                 <!-- RASM 3 -->
                 <div class="gallery-item">
@@ -366,9 +364,16 @@
                     Скачать каталог в WhatsApp
                 </a>
             </div>
+            <br><br>
+            <div style="text-align: center; margin-top: 40px;">
+                <p style="margin-bottom: 20px; font-weight: bold;">Если вам интересен сотрудничать то пишите нам по ватсапу по этим номерам</p>
+                        <a href="https://wa.me/998998804477" class="btn btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Написать в WhatsApp
+                        </a>
+            </div>
         </div>
     </section>
-    <!-- FOOTER -->
+    <!-- FOOTER
     <footer>
         <div class="container">
             <h3 style="margin-bottom: 10px;">N.STAR OPTOM</h3>
@@ -386,7 +391,7 @@
             </p>
             <p style="margin-top: 30px; font-size: 12px; opacity: 0.4;">© 2024 N.STAR. All rights reserved.</p>
         </div>
-    </footer>
+    </footer> -->
 
 </body>
 </html>
