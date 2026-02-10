@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N.STAR - Спортивная одежда оптом</title>
+    <!-- FontAwesome Ikonkalar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #000000;
+            --secondary: #1a1a1a;
+            --accent: #25D366; /* WhatsApp Green */
+            --bg-light: #F7F7F7;
+            --white: #ffffff;
+            --text-gray: #666666;
+            --radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--primary);
+            line-height: 1.5;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 100px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background-color: #333;
+        }
+
+        .btn-whatsapp {
+            background-color: var(--accent);
+            color: var(--white);
+        }
+        .btn-whatsapp:hover {
+            background-color: #1ebc57;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 100px 0 60px;
+        }
+        .hero-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+        .hero-content p {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+        }
+        .hero-image {
+            position: relative;
+        }
+        .hero-image img {
+            width: 100%;
+            border-radius: var(--radius);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* --- STATS BAR --- */
+        .stats-bar {
+            background: var(--primary);
+            color: var(--white);
+            padding: 40px 0;
+            margin: 60px 0;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+        .stat-item h3 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+            color: var(--accent);
+        }
+        .stat-item p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+        }
+
+        /* --- FEATURES GRID --- */
+        .features {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--radius);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            background: var(--bg-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 24px;
+            color: var(--primary);
+        }
+        .card h3 {
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+        .card p {
+            color: var(--text-gray);
+        }
+
+        /* --- GALLERY SECTION --- */
+        .gallery {
+            padding: 80px 0;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: var(--radius);
+        }
+
+        /* --- VIDEO CTA --- */
+        .video-cta {
+            background: #000;
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .instagram-gradient {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 60px 0;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+        .social-links {
+            margin: 20px 0;
+        }
+        .social-links a {
+            font-size: 24px;
+            color: var(--primary);
+            margin: 0 15px;
+            transition: color 0.2s;
+        }
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-wrapper {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .hero-image {
+                order: -1; /* Rasmni tepaga chiqarish */
+                margin-bottom: 30px;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-wrapper">
+                <div class="hero-content">
+                    <h1>Спортивная одежда <span style="color: var(--accent)">ОПТОМ</span> от производителя</h1>
+                    <p>Зарабатывайте от 100% на перепродаже. Премиальное качество (Турция), прямые поставки из Ташкента по всему СНГ.</p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <a href="https://wa.me/998998804477" class="btn btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Написать в WhatsApp
+                        </a>
+                        <a href="#catalog" class="btn" style="background: #f0f0f0; color: #000;">
+                            <i class="fas fa-arrow-down"></i> Каталог
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <!-- ASOSIY RASM: Shu yerni o'zgartiring -->
+                    <img src="rasmlar/sport_kiyim1.jpg" alt="Sportswear Wholesale">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <div class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3><i class="fas fa-industry"></i></h3>
+                    <p>Прямой завод</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1000+</h3>
+                    <p>Трендовых моделей</p>
+                </div>
+                <div class="stat-item">
+                    <h3>СНГ</h3>
+                    <p>Доставка без границ</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Гарантия качества</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FEATURES -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Почему выбирают нас?</h2>
+                <p>Мы создаем условия, при которых ваш бизнес будет расти.</p>
+            </div>
+            <div class="grid-cards">
+                <!-- Feature 1 -->
+                <div class="card">
+                    <div class="icon-circle"><i class="fas fa-hand-holding-dollar"></i></div>
+                    <h3>Без посредников</h3>
+                    <p>Цена завода, вы не переплачиваете. Получаете лучшую себестоимость на рынке.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="card">
+                    <div class="icon-circle"><i class="fas fa-fire"></i></div>
+                    <h3>Топовые модели</h3>
+                    <p>Шьем только трендовые модели, которые быстро продаются в Instagram и на маркетплейсах.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="card">
+                    <div class="icon-circle"><i class="fas fa-check-double"></i></div>
+                    <h3>Минимальный риск</h3>
+                    <p>Отправляем пробную партию для проверки качества перед большим закупом.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VISUAL CATALOG -->
+    <section id="catalog" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Наши модели</h2>
+                <p>Высокая маржинальность. Турецкие ткани. Качественная фурнитура.</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- RASM 1 -->
+                <div class="gallery-item">
+                    <img src="rasmlar/duoyka_oq.jpg" alt="Product 1">
+                </div>
+                <!-- RASM 2 -->
+                <div class="gallery-item">
+                    <img src="rasmlar/duoyka_qora.jpg" alt="Product 2">
+                </div>
+                <!-- RASM 3 -->
+                <div class="gallery-item">
+                    <img src="rasmlar/duoyka_yashil.jpg" alt="Product 3">
+                </div>
+                <!-- RASM 4 -->
+                <div class="gallery-item">
+                    <img src="rasmlar/sport_kiyim2.jpg" alt="Product 4">
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <p style="margin-bottom: 20px; font-weight: bold;">Хотите получить полный каталог с ценами?</p>
+                <a href="https://wa.me/998998804477" class="btn btn-whatsapp">
+                    Скачать каталог в WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <h3 style="margin-bottom: 10px;">N.STAR OPTOM</h3>
+            <p style="color: #666; margin-bottom: 20px;">Оптовое производство спортивной одежды</p>
+            
+            <div class="social-links">
+                <a href="https://wa.me/998998804477"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://instagram.com/nstar_optom"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+            </div>
+            
+            <p style="font-size: 14px; color: #999;">
+                Tel: +998 (99) 880-44-77 <br>
+                г. Ташкент, Узбекистан
+            </p>
+            <p style="margin-top: 30px; font-size: 12px; opacity: 0.4;">© 2024 N.STAR. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
